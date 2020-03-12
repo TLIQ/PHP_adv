@@ -1,0 +1,16 @@
+{% extends 'main.twig' %}
+{% block title %} Каталог товаров {% endblock %}
+{% block content %}
+    <h2>{{ title }}</h2>
+    <a href="/?c=good&a=add">Добавить товар</a>
+
+
+    {% for good in goods %}
+        <p>Название товара {{ good.getName }}</p>
+        <a href="?a=one&id={{good.getID}}">Подробнее</a>
+    {% else %}
+        Нет товаров
+    {% endfor %}
+{% endblock %}
+
+
